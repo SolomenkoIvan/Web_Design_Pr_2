@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: aliceblue;
+}
+
+header {
+    background-color: rgb(8, 190, 251);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    background: rgb(3, 176, 233);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: rgb(6, 2, 2);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: whitesmoke;
+}
+
+section {
+    padding: 10px;
+    border: 1px solid #111;
+}
+
+footer {
+    background-color: #686767;
+    color: whitesmoke;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Секция расписания */
+#timetable {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+}
+
+#timetable h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Таблица */
+#timetable table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#timetable th, #timetable td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Заголовки таблицы */
+#timetable thead th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Чередование строк */
+#timetable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover эффект */
+#timetable tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Фоновые цвета для разных типов занять */
+#timetable td[data-type="lecture"] {
+    background-color: #d1ecf1; /* Лекции: светло-синий */
+}
+
+#timetable td[data-type="practice"] {
+    background-color: #d4edda; /* Практика: светло-зеленый */
+}
+
+#timetable td[data-type="lab"] {
+    background-color: #f8d7da; /* Лабораторные: светло-красный */
+}
+
+#timetable td[data-type="seminar"] {
+    background-color: #fff3cd; /* Семинары: светло-желтый */
+}
+
+/* Ширина для мобильных устройств */
+@media (max-width: 768px) {
+    #timetable table, #timetable thead, #timetable tbody, #timetable th, #timetable td, #timetable tr {
+        display: block;
+    }
+
+    #timetable thead {
+        display: none;
+    }
+
+    #timetable tr {
+        margin-bottom: 15px;
+    }
+
+    #timetable td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    #timetable td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
